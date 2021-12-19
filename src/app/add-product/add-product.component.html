@@ -1,0 +1,17 @@
+<form #f=ngForm (ngSubmit)="ajouter(f)" >
+    <div>
+      <div class="col-md-5 mb-3">
+        <label for="validationServer01">Product name</label>
+        <input type="text" class="form-control"  placeholder="First name" ngModel name="nom" required>
+      </div>
+      <div class="col-md-5 mb-3">
+        <label for="validationServer02">Product price</label>
+        <input type="number" class="form-control"  placeholder="Last name" ngModel name="prix" required>
+      </div>  
+      <div class="col-md-5 mb-3">
+        <label for="validationServer02">Product quantity</label>
+        <input type="number" class="form-control"  placeholder="Last name" ngModel name="quantite" required>
+      </div>
+    </div>
+    <button [disabled]=!f.valid class="btn btn-success col-md-5 mb-3" type="submit">Add Product</button>
+</form>

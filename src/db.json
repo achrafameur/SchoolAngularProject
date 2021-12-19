@@ -1,0 +1,24 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "nom": "Imprimante ",
+      "prix": 450,
+      "quantite": 20,
+      "nomImg": "imprimante-multifonction-jet-d-encre-canon-pixma-ts3140-wifi.jpg"
+    },
+    {
+      "id": 2,
+      "nom": "Pc Gamer ",
+      "prix": 450,
+      "quantite": 20,
+      "nomImg": "pc-portable-gamer-msi-gl65-leopard-10sd-025xfr.jpg"
+    },
+    {
+      "nom": "Pc Gamer ROG",
+      "prix": 3400,
+      "quantite": 1,
+      "id": 3
+    }
+  ]
+}

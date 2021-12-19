@@ -1,0 +1,43 @@
+<div>
+<div style="margin-left: 500px;display: flex;margin-top: 10px;">
+    <label for="exampleInputEmail1" class="form-label">Rechercher Par Mot Clé :</label>
+    <input [(ngModel)]="texte" class="form-control w-25" style="margin-left: 20px;">
+</div>
+
+<div style="margin-top: 10px;"> 
+<table *ngIf="products; else vide" border="1" class="table table-dark" style="width: 80%; margin: auto;">
+    <thead>
+        <tr>
+            <td scope="col"><button (click)=afficher() class="btn btn-danger">{{valeurB}}</button></td>
+            <td scope="col">ID</td>
+            <td scope="col">Nom</td>
+            <td scope="col">Prix</td>
+            <td scope="col">Qté</td>
+            <td scope="col">Actions</td>
+        </tr>
+    </thead>
+    <tbody *ngFor="let el of products" [ngStyle]="{color:getColor(el.quantite)}">
+        <tr>
+            <td scope="row" style="color: white;"><img  *ngIf="valeurB=='masquer'" src="http://localhost:8082/api/getImage/{{el.id}}" width="100" height="100"></td>
+            <td scope="row" style="color: white;">{{el.id}}</td>
+            <td scope="row" style="color: white;"><a>{{el.nom  | uppercase}}</a></td>
+            <td scope="row" style="color: white;">{{el.prix | currency:'TND':'symbol':'2.2-2'}}</td>
+            <td scope="row" style="color: white;">{{el.quantite}}</td>
+            <td style="color: white;">
+                <button type="button" (click)=delete(el.id)>
+                    <span class="fa fa-trash" style="color:red"></span>
+                </button>
+                <button type="button" routerLink="/updateProduct/{{el.id}}">
+                    <span class="fa fa-edit" style="color:rgb(33, 158, 241)"></span>
+                </button>
+                <button type="button" routerLink="/products/{{el.id}}">
+                    <span class="fa fa-info" style="color:rgb(34, 158, 121)"></span>
+                </button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<ng-template #vide> <h2 style="color: red;">Tableau vide </h2></ng-template>

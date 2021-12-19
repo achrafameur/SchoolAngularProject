@@ -1,0 +1,45 @@
+<p>update-product works!</p>
+<form #f="ngForm" (ngSubmit)="modifier()">
+  <div>
+    <div class="col-md-5 mb-3">
+      <label for="validationServer01">Product name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nom"
+        [(ngModel)]="produit.nom"
+        #nom="ngModel"
+        required
+      />
+    </div>
+    <div class="col-md-5 mb-3">
+      <label for="validationServer02">Product price</label>
+      <input
+        type="number"
+        class="form-control"
+        name="prix"
+        [(ngModel)]="produit.prix"
+        #prix="ngModel"
+        required
+      />
+    </div>
+    <div class="col-md-5 mb-3">
+      <label for="validationServer02">Product quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        name="quantite"
+        [(ngModel)]="produit.quantite"
+        #quantite="ngModel"
+        required
+      />
+    </div>
+  </div>
+  <button
+    [disabled]="!f.valid"
+    class="btn btn-success col-md-5 mb-3"
+    type="submit"
+  >
+    Update Product
+  </button>
+</form>
